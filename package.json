@@ -1,0 +1,45 @@
+{
+  "name": "monorepo",
+  "private": true,
+  "version": "0.0.1",
+  "main": "index.js",
+  "scripts": {
+    "test": "pnpm -r test",
+    "dev": "pnpm -r dev --filter=frontend --filter=backend",
+    "lint": "pnpm -r lint --filter=frontend --filter=backend",
+    "api:client:g": "pnpm -r client:get --filter=api-client"
+  },
+  "keywords": [],
+  "author": "Evgeniy Talko <etalko@gmail.com>",
+  "license": "MIT",
+  "workspaces": [
+    "packages/*"
+  ],
+  "dependencies": {
+    "ast-types": "^0.14.2",
+    "ast-types-flow": "^0.0.7",
+    "eslint": "^8.14.0",
+    "eslint-import-resolver-node": "^0.3.6",
+    "eslint-import-resolver-typescript": "^2.7.1",
+    "eslint-module-utils": "^2.7.3",
+    "eslint-plugin-boundaries": "^2.9.0",
+    "eslint-plugin-fp-ts": "^0.3.2",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-listeners": "^1.1.0",
+    "eslint-plugin-react": "^7.29.4",
+    "eslint-plugin-react-hooks": "^4.5.0",
+    "eslint-plugin-sonarjs": "^0.13.0",
+    "eslint-plugin-unused-imports": "^2.0.0",
+    "eslint-plugin-use-encapsulation": "^1.1.0",
+    "eslint-rule-composer": "^0.3.0",
+    "eslint-scope": "^7.1.1",
+    "eslint-utils": "^3.0.0",
+    "eslint-visitor-keys": "^3.3.0",
+    "mime-types": "^2.1.35",
+    "prop-types": "^15.8.1",
+    "react-docgen-typescript": "^2.2.2",
+    "style-value-types": "^5.1.0",
+    "typescript": "^4.6.4"
+  }
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title></title>
+        <script
+            src="https://cdn.socket.io/4.4.1/socket.io.min.js"
+            integrity="sha384-fKnu0iswBIqkjxrhQCTZ7qlLHOFEgNkRmK2vaO/LbTZSXdJfAu6ewRBdwHPhBo/H"
+            crossorigin="anonymous"
+        ></script>
+    </head>
+    <body>
+        <header>
+            <h1>Hello</h1>
+            <button id="start" type="button">Start test</button>
+            <button id="stop" type="button">Stop test</button>
+        </header>
+
+        <div>
+            <code><pre>open browser console to view server messages</pre></code>
+        </div>
+        <div>
+            <canvas id="myChart"></canvas>
+        </div>
+
+        <script>
+            const socket = io.connect('http://localhost:8900')
+
+            socket.on('connect', function (data) {
+                console.log('Connected to server')
+            })
+
+            socket.on('message', (data) => {
+                if (data.source === 'server' && data.cmd === 'data') {
+                    console.log({ data })
+                }
+            })
+
+            socket.on('disconnecting', function (data) {
+                console.log('Disconnected from server')
+            })
+
+            document.querySelector('#start').addEventListener('click', () => {
+                socket.emit('message', { cmd: 'test:start', source: 'client' })
+                console.log('Test started')
+            })
+
+            document.querySelector('#stop').addEventListener('click', () => {
+                socket.emit('message', { cmd: 'test:stop', source: 'client' })
+                console.log('Test stopped')
+            })
+        </script>
+    </body>
+</html>

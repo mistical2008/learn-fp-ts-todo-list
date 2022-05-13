@@ -1,0 +1,13 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "composite": false,
+    "lib": ["esnext"],
+    "isolatedModules": true,
+    "noUncheckedIndexedAccess": false,
+    "noImplicitReturns": true,
+    "useUnknownInCatchVariables": false,
+    "skipDefaultLibCheck": true
+  },
+  "include": ["src/**/*"]
+}

@@ -1,0 +1,16 @@
+inputSpec: openapi.json
+outputDir: src/generated
+generatorName: typescript-axios
+validateSpec: false
+# verbose: true
+# apis:
+#     - "Controller"
+
+additionalProperties:
+    supportsES6: true,
+    typescriptThreePlus: true,
+    withoutPrefixEnums: true,
+    prependFormOrBodyParameters: true,
+    # withSeparateModelsAndApi: true,
+    enumNameSuffix: ''
+    enumPropertyNaming: "UPPERCASE"

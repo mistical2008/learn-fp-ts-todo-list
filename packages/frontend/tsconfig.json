@@ -1,0 +1,60 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "module": "es2022",
+    "target": "es2017",
+    "moduleResolution": "node",
+    "baseUrl": "./src",
+    "paths": {
+      "@app/frontend": [
+        "../../frontend/src"
+      ],
+      "@app/backend": [
+        "../../backend/src"
+      ],
+      "@app/types": [
+        "../../types/src"
+      ],
+      "@app/*": [
+        "../../*/src"
+      ],
+      "@lib/api-client": [
+        "../../api-client/src"
+      ],
+      "~*": [
+        "../*"
+      ],
+      "src/*": [
+        "./*"
+      ],
+      "@/*": [
+        "../node_modules/*"
+      ],
+      "app/*": [
+        "./app/*"
+      ],
+      "processes/*": [
+        "./processes/*"
+      ],
+      "pages/*": [
+        "./pages/*"
+      ],
+      "widgets/*": [
+        "./widgets/*"
+      ],
+      "features/*": [
+        "./features/*"
+      ],
+      "entities/*": [
+        "./entities/*"
+      ],
+      "shared/*": [
+        "./shared/*"
+      ]
+    }
+  },
+  "include": [
+    "src/**/*",
+    "scripts/**/*"
+  ]
+}
