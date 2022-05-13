@@ -1,0 +1,40 @@
+{
+  "name": "@lib/api-client",
+  "version": "0.0.1",
+  "description": "OpenAPI generated client",
+  "private": true,
+  "main": "",
+  "types": [],
+  "author": "Evgeniy Talko <etalko@gmail.com>",
+  "files": [
+    "dist",
+    "src",
+    "package.json"
+  ],
+  "scripts": {
+    "dev": "echo \"Error: Script dev not implemented\"",
+    "build": "pnpm clean && pnpm compile",
+    "lint": "pnpx eslint ./src",
+    "lint:fix": "pnpx eslint ./src --fix",
+    "clean": "npx rimraf ./src/generated",
+    "compile": "tsc -p tsconfig.build.json",
+    "tsnode": "node -r @swc-node/register",
+    "schema:dl": "pnpm tsnode -- scripts/download-file/index.ts --url http://0.0.0.0:8080/api/openapi.json --output openapi-raw.json",
+    "schema:tf": "pnpm tsnode -- ./scripts/transform-api-schema/index.ts --input openapi-raw.json --output openapi.json",
+    "client:g": "pnpm clean && npx @openapitools/openapi-generator-cli batch ./openapi*.yaml",
+    "client:get": "pnpm schema:dl && pnpm schema:tf && pnpm client:g"
+  },
+  "devDependencies": {
+    "@swc-node/register": "^1.5.1",
+    "@types/minimist": "^1.2.2",
+    "@types/node": "^17.0.33",
+    "axios": "^0.27.2",
+    "openapi3-ts": "^2.0.2",
+    "typescript": "^4.6.3"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "fp-ts": "^2.12.1",
+    "minimist": "^1.2.6"
+  }
+}

@@ -1,0 +1,4 @@
+@import 'antd/dist/antd.css';
+@import '@elastic/eui/dist/eui_theme_light.css';
+/* @import '@elastic/eui/dist/eui_theme_dark.css'; */
+@import 'global.css'

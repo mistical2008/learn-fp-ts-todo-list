@@ -1,0 +1,30 @@
+{
+  "name": "@app/types",
+  "version": "0.0.1",
+  "description": "Shared project types",
+  "private": true,
+  "main": "",
+  "types": [
+    "dist/index.d.ts"
+  ],
+  "author": "Evgeniy Talko <etalko@gmail.com>",
+  "files": [
+    "dist",
+    "src",
+    "package.json"
+  ],
+  "scripts": {
+    "dev": "echo \"Error: Script dev not implemented\"",
+    "build": "pnpm clean && pnpm compile",
+    "lint": "pnpx eslint ./src",
+    "lint:fix": "pnpx eslint ./src --fix",
+    "clean": "npx rimraf ./dist",
+    "compile": "tsc -p tsconfig.build.json"
+  },
+  "devDependencies": {
+    "typescript": "^4.6.3"
+  },
+  "dependencies": {
+    "socket.io": "^4.4.1"
+  }
+}
